@@ -1,0 +1,16 @@
+---
+driver:
+  name: docker
+platforms:
+  - name: ansible-role-redis-1604
+    image: solita/ubuntu-systemd:16.04
+    privileged: True
+    volume: [ "/sys/fs/cgroup:/sys/fs/cgroup:rw" ]
+    command: "/sbin/init"
+
+lint:
+  name: yamllint
+  enabled: False
+
+provisioner:
+  name: ansible
